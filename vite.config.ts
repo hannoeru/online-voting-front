@@ -24,6 +24,25 @@ const config: UserConfig = {
       importMode(path: string) {
         return path === '/src/pages/index.vue' ? 'sync' : 'async'
       },
+      extendRoute(route, parent) {
+        const hideInAuth = ['/login', '/register']
+        if (hideInAuth.includes(route.path)) {
+          // Index is unauthenticated.
+          return {
+            ...route,
+            meta: {
+              hideNavbar: true,
+              hideSearch: true,
+            },
+          }
+        }
+
+        // Augment the route with meta that indicates that the route requires authentication.
+        return {
+          ...route,
+          meta: { auth: true },
+        }
+      },
       extensions: ['vue', 'md'],
     }),
 

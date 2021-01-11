@@ -1,7 +1,7 @@
 <template>
-  <header class="flex items-center justify-between h-16 px-6 py-2 bg-white border-b">
+  <header class="fixed z-50 flex items-center justify-between w-full h-16 px-6 py-2 bg-white border-b">
     <Logo />
-    <Search />
+    <Search v-if="!$route.meta.hideSearch" />
     <UserAuth />
   </header>
 </template>

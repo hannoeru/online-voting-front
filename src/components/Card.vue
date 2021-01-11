@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-center">
     <div class="mb-2 text-xl text-left text-blue-900">
       <h2>史上最強のエディター</h2>
     </div>

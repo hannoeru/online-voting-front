@@ -1,5 +1,5 @@
 <template>
-  <nav class="mt-6 text-xl">
+  <nav class="mt-6 text-xl text-center">
     <router-link class="mx-2 icon-btn" to="/" title="home">
       <carbon-campsite />
     </router-link>
@@ -13,7 +13,7 @@
       <carbon-dicom-overlay />
     </router-link>
 
-    <a class="mx-2 icon-btn" rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank" title="GitHub">
+    <a class="mx-2 icon-btn" rel="noreferrer" href="https://github.com/hannoeru/online-voting-front" target="_blank" title="GitHub">
       <carbon-logo-github />
     </a>
   </nav>

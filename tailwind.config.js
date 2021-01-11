@@ -2,6 +2,7 @@
 const colors = require('tailwindcss/colors')
 const typography = require('@tailwindcss/typography')
 const defaultTheme = require('tailwindcss/defaultTheme')
+const formPlugin = require('@tailwindcss/forms')
 
 module.exports = {
   purge: {
@@ -24,7 +25,7 @@ module.exports = {
     textColor: ['dark', 'hover', 'active', 'disabled'],
     opacity: ['dark', 'hover', 'active', 'focus', 'disabled'],
   },
-  plugins: [typography],
+  plugins: [typography, formPlugin],
   theme: {
     extend: {
       fontFamily: {
@@ -35,6 +36,7 @@ module.exports = {
         orange: '#FF8E5B',
       },
       padding: {
+        22: '5.5rem',
         '2/3': '66.666666%',
       },
       opacity: {

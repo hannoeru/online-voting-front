@@ -1,5 +1,5 @@
 <template>
-  <div class="inline-flex flex-col space-y-3 text-left">
+  <div class="fixed top-0 left-0 inline-flex flex-col p-6 space-y-3 text-left pt-22">
     <button class="px-3 py-1.5 text-white rounded-lg bg-orange focus:outline-none focus:ring-1">
       投票を作成する
     </button>
@@ -11,10 +11,9 @@
         <router-link
           v-for="item in categroy"
           :key="item.slog"
-          v-slot="{ isActive }"
-          to="/"
+          to="/sss"
           class="px-2 py-1.5 rounded-lg hover:bg-gray-100 focus:bg-gray-200"
-          :class="{'bg-gray-200': isActive}"
+          active-class="bg-gray-200"
         >
           {{ item.name }}
         </router-link>
