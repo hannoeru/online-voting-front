@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require('tailwindcss/colors')
 const typography = require('@tailwindcss/typography')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: {
@@ -18,17 +19,23 @@ module.exports = {
   },
   variants: {
     cursor: ['responsive', 'disabled'],
-    backgroundColor: ['dark', 'hover', 'disabled'],
+    backgroundColor: ['dark', 'hover', 'disabled', 'focus'],
     borderColor: ['dark', 'active', 'focus', 'disabled'],
     textColor: ['dark', 'hover', 'active', 'disabled'],
     opacity: ['dark', 'hover', 'active', 'focus', 'disabled'],
   },
-  darkMode: 'class',
   plugins: [typography],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Helvetica Neue"', 'Arial', '"Hiragino Kaku Gothic ProN"', '"Hiragino Sans"', 'Meiryo', ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         teal: colors.teal,
+        orange: '#FF8E5B',
+      },
+      padding: {
+        '2/3': '66.666666%',
       },
       opacity: {
         10: '0.1',

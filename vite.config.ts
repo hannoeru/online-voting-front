@@ -7,7 +7,6 @@ import ViteComponents from 'vite-plugin-components'
 import Markdown from 'vite-plugin-md'
 import Prism from 'markdown-it-prism'
 import { VitePWA } from 'vite-plugin-pwa'
-import VueI18n from '@intlify/vite-plugin-vue-i18n'
 
 const config: UserConfig = {
   alias: {
@@ -57,7 +56,10 @@ const config: UserConfig = {
     }),
 
     // https://github.com/antfu/vite-plugin-icons
-    ViteIcons(),
+    ViteIcons({
+      scale: 1.1,
+      defaultStyle: 'vertical-align: middle;',
+    }),
 
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
@@ -79,11 +81,6 @@ const config: UserConfig = {
         ],
       },
     }),
-
-    // https://github.com/intlify/vite-plugin-vue-i18n
-    VueI18n({
-      include: [path.resolve(__dirname, 'locales/**')]
-    })
   ],
 }
 
