@@ -7,10 +7,10 @@
       <div class="relative pb-64 rounded-md bg-gradient-to-r from-green-400 to-purple-500">
         <div class="absolute flex w-full h-full">
           <div class="flex items-center justify-center flex-1 h-full p-2">
-            <img src="/~/assets/vim.png" alt="" class="h-2/3">
+            <img src="/~/assets/vim.webp" alt="" class="h-2/3">
           </div>
           <div class="flex items-center justify-center flex-1 h-full p-2">
-            <img src="/~/assets/emacs.png" alt="" class="h-2/3">
+            <img src="/~/assets/emacs.webp" alt="" class="h-2/3">
           </div>
         </div>
       </div>
