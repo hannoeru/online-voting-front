@@ -96,8 +96,8 @@ const config: UserConfig = {
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
       manifest: {
-        name: 'Vitesse',
-        short_name: 'Vitesse',
+        name: 'Online Voting',
+        short_name: 'Online Voting',
         theme_color: '#ffffff',
         icons: [
           {
