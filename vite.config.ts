@@ -8,6 +8,19 @@ import Markdown from 'vite-plugin-md'
 import Prism from 'markdown-it-prism'
 import { VitePWA } from 'vite-plugin-pwa'
 
+const cssLangs = '\\.(css|less|sass|scss|styl|stylus|postcss)($|\\?)'
+const cssLangRE = new RegExp(cssLangs)
+const cssModuleRE = new RegExp(`\\.module${cssLangs}`)
+const directRequestRE = /(\?|&)direct\b/
+
+const isCSSRequest = (request: string) =>
+  cssLangRE.test(request) && !directRequestRE.test(request)
+
+const isDirectCSSRequest = (request: string) =>
+  cssLangRE.test(request) && directRequestRE.test(request)
+
+let server
+
 const config: UserConfig = {
   alias: {
     '/~/': `${path.resolve(__dirname, 'src')}/`,
@@ -100,6 +113,25 @@ const config: UserConfig = {
         ],
       },
     }),
+    {
+      name: 'vite-plugin-tailwind-hmr',
+      configureServer(_server) {
+        server = _server
+      },
+      transform(css, id) {
+        if (!cssLangRE.test(id))
+          return
+
+        if (server) {
+          if (isDirectCSSRequest(id)) { return css }
+          else {
+            // server only
+            return `${css}\nimport.meta.hot.accept('./tailwind.config.js')`
+          }
+        }
+        return css
+      },
+    },
   ],
 }
 
