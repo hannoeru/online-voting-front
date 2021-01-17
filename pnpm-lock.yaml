@@ -30,10 +30,9 @@ devDependencies:
   vite-plugin-components: 0.6.6
   vite-plugin-icons: 0.2.1_60662661a2100f089e3e587ba7a01e7b
   vite-plugin-md: 0.2.1_e82135c7b419c73f8566b17e1f05eb19
+  vite-plugin-pages: 0.1.4_vue@3.0.5
   vite-plugin-pwa: 0.3.6
-  vite-plugin-voie: 0.7.3_d56eaad2e5bfdf3f042ad6adf3ee76cb
   vite-ssg: 0.3.1_0c760a617f77d86330275a3e623b7fed
-  voie-pages: 0.4.0_vue@3.0.5
 lockfileVersion: 5.2
 packages:
   /@antfu/eslint-config-basic/0.4.3_eslint@7.17.0:
@@ -2226,6 +2225,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==
+  /directory-tree/2.2.5:
+    dev: true
+    engines:
+      node: '>=4.2'
+    resolution:
+      integrity: sha512-qmeuql8N7hQB5b+cnlvbcHSjKBNpRjLY5KcvyFd9CTC5uTN7sJshEQ/ExZidAcEUEYcC/76i8ikLtbBMG81YRg==
   /doctrine/1.5.0:
     dependencies:
       esutils: 2.0.3
@@ -2732,6 +2737,19 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-kr/Oo6PX51265qeuCYsyGypiO5uJFgBS0jksyG7FUeCyQzNwYnzrNIMR1NXfkZXsMYXYLRAHgISHBz8gQcxKHQ==
+  /fast-glob/3.2.5:
+    dependencies:
+      '@nodelib/fs.stat': 2.0.4
+      '@nodelib/fs.walk': 1.2.6
+      glob-parent: 5.1.1
+      merge2: 1.4.1
+      micromatch: 4.0.2
+      picomatch: 2.2.2
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-2DtFcgT68wiTTiwZ2hNdJfcHNke9XOfnwmBRWXhmeKM8rF0TGwmC/Qto3S7RoZKp5cilZbxzO5iTNTQsJ+EeDg==
   /fast-json-stable-stringify/2.1.0:
     dev: true
     resolution:
@@ -4938,6 +4956,18 @@ packages:
       vite: ^2.0.0-beta.1
     resolution:
       integrity: sha512-iYVkbkgxZp2XFEs9i9liFiXJHsP0hPnuUpjsJSI3EtrgKg/hW2TzikjJPHC06U3bZcIjqCIIwwK8EVc9+AY3Lg==
+  /vite-plugin-pages/0.1.4_vue@3.0.5:
+    dependencies:
+      debug: 4.3.2
+      directory-tree: 2.2.5
+      fast-glob: 3.2.5
+      glob-to-regexp: 0.4.1
+      vue-router: 4.0.3_vue@3.0.5
+    dev: true
+    peerDependencies:
+      vue: '*'
+    resolution:
+      integrity: sha512-pLjxyE+dz5SUgm0SIxn22MASKfOsDRpxD/Vlcp+Y3s8tt9ZTKtsJaM6kPsJVkZwZC3EHdiSwGhtKd085zKnAqQ==
   /vite-plugin-pwa/0.3.6:
     dependencies:
       debug: 4.3.2
@@ -4947,20 +4977,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-GDgT8jFGHUz2j11I7Z0W+X5mnkaUoMVitJ/UjN/ezjy9HcXrvxaIVnhzMdESJSv+dxy4DD9ymD91cF9Ei6//cQ==
-  /vite-plugin-voie/0.7.3_d56eaad2e5bfdf3f042ad6adf3ee76cb:
-    dependencies:
-      fast-glob: 3.2.4
-      glob-to-regexp: 0.4.1
-      vite: 2.0.0-beta.23
-      voie-pages: 0.4.0_vue@3.0.5
-      vue-router: 4.0.3_vue@3.0.5
-    dev: true
-    peerDependencies:
-      vite: ^2.0.0-beta.3
-      vue: '*'
-      vue-router: ^4.0.0-beta.4
-    resolution:
-      integrity: sha512-OwAwziXPb8ywKHXfd9E1UXsEF2rRi4Dgb3F020s2lLWdtuY84xQH4JK84XwytFeht3TsexmJpVPHg2y17QdltQ==
   /vite-ssg/0.3.1_0c760a617f77d86330275a3e623b7fed:
     dependencies:
       '@vue/compiler-sfc': 3.0.5_vue@3.0.5
@@ -4998,14 +5014,6 @@ packages:
       fsevents: 2.1.3
     resolution:
       integrity: sha512-vrQ56VBUCSjNFgx6DapDXMo6fkW2s3S7zmxWCIEE2ZiAbxoTQCic+NveTiMRA4+JF29ZQf00tzsAri6BIzi9VA==
-  /voie-pages/0.4.0_vue@3.0.5:
-    dependencies:
-      vue-router: 4.0.3_vue@3.0.5
-    dev: true
-    peerDependencies:
-      vue: '*'
-    resolution:
-      integrity: sha512-3oa4wm9tTQEPFdEZychcqCF91PfsEZfvJZ62GoGJf9fpzDF5DnmNZJYQkGxzRbKYUvaIYm37DCd5yDn8btl0eA==
   /vscode-languageserver-textdocument/1.0.1:
     dev: true
     resolution:
@@ -5366,9 +5374,8 @@ specifiers:
   vite-plugin-components: ^0.6.6
   vite-plugin-icons: ^0.2.1
   vite-plugin-md: ^0.2.1
+  vite-plugin-pages: ^0.1.4
   vite-plugin-pwa: ^0.3.6
-  vite-plugin-voie: ^0.7.3
   vite-ssg: ^0.3.1
-  voie-pages: ^0.4.0
   vue: ^3.0.5
   vue-router: ^4.0.3

@@ -1,7 +1,7 @@
 import path from 'path'
 import { UserConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Voie from 'vite-plugin-voie'
+import Pages from 'vite-plugin-pages'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteComponents from 'vite-plugin-components'
 import Markdown from 'vite-plugin-md'
@@ -31,12 +31,7 @@ const config: UserConfig = {
     }),
 
     // https://github.com/vamplate/vite-plugin-voie
-    Voie({
-      // load index page sync and bundled with the landing page to improve first loading time.
-      // feel free to remove if you don't need it
-      importMode(path: string) {
-        return path === '/src/pages/index.vue' ? 'sync' : 'async'
-      },
+    Pages({
       extendRoute(route, parent) {
         const hideInAuth = ['/login', '/register']
         if (hideInAuth.includes(route.path)) {
