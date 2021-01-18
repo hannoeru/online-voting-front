@@ -9,6 +9,7 @@
     "@vee-validate/i18n": "^4.0.2",
     "@vee-validate/rules": "^4.0.5",
     "@vueuse/core": "^4.0.5",
+    "axios": "^0.21.1",
     "nprogress": "^0.2.0",
     "vee-validate": "^4.1.7",
     "vue": "^3.0.5",

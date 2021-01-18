@@ -1,4 +1,7 @@
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useStorage } from '@vueuse/core'
+import axios from '../axios'
 
 interface LoginForm {
   email: string
@@ -10,15 +13,44 @@ interface RegisterForm extends LoginForm {
   terms: boolean
 }
 
-export function useAuth() {
-  const isLogin = ref(false)
+interface UserStorage {
+  token: string
+}
 
-  function login(data: LoginForm) {
-    console.log(data)
+const userStorage = useStorage<UserStorage>('user', { token: '' })
+
+export function useAuth() {
+  const isLogin = computed(() => {
+    return !!userStorage.value.token
+  })
+  const router = useRouter()
+
+  async function login(data: LoginForm) {
+    const result = await axios.post('auth/login', data)
+    console.log(result)
+    if (result.data.success) {
+      userStorage.value.token = result.data.token
+      router.push('/')
+    }
+    else {
+      userStorage.value.token = ''
+    }
   }
 
-  function register(data: RegisterForm) {
-    console.log(data)
+  async function register(data: RegisterForm) {
+    const result = await axios.post('auth/signup', {
+      email: data.email,
+      name: data.username,
+      password: data.password,
+    })
+    console.log(result)
+    if (result.data.success) {
+      userStorage.value.token = result.data.token
+      router.push('/')
+    }
+    else {
+      userStorage.value.token = ''
+    }
   }
 
   return {

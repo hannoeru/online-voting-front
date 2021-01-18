@@ -2,6 +2,7 @@ dependencies:
   '@vee-validate/i18n': 4.0.2
   '@vee-validate/rules': 4.0.5
   '@vueuse/core': 4.0.5_vue@3.0.5
+  axios: 0.21.1
   nprogress: 0.2.0
   vee-validate: 4.1.7_vue@3.0.5
   vue: 3.0.5
@@ -1776,6 +1777,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
+  /axios/0.21.1:
+    dependencies:
+      follow-redirects: 1.13.1
+    dev: false
+    resolution:
+      integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   /babel-eslint/10.1.0_eslint@7.17.0:
     dependencies:
       '@babel/code-frame': 7.12.11
@@ -2810,6 +2817,17 @@ packages:
     dev: true
     resolution:
       integrity: sha512-tW+UkmtNg/jv9CSofAKvgVcO7c2URjhTdW1ZTkcAritblu8tajiYy7YisnIflEwtKssCtOxpnBRoCB7iap0/TA==
+  /follow-redirects/1.13.1:
+    dev: false
+    engines:
+      node: '>=4.0'
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    resolution:
+      integrity: sha512-SSG5xmZh1mkPGyKzjZP8zLjltIfpW32Y5QpdNJyjcfGxK3qo3NDDkZOZSFiGn1A6SclQxY9GzEwAHQ3dmYRWpg==
   /forever-agent/0.6.1:
     dev: true
     resolution:
@@ -5360,6 +5378,7 @@ specifiers:
   '@vuedx/typescript-plugin-vue': ^0.4.1
   '@vueuse/core': ^4.0.5
   autoprefixer: ^10.2.1
+  axios: ^0.21.1
   cross-env: ^7.0.3
   eslint: ^7.17.0
   markdown-it-prism: ^2.1.4
