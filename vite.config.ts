@@ -128,6 +128,9 @@ const config: UserConfig = {
       },
     },
   ],
+  optimizeDeps: {
+    include: ['vue-chemistry/console'],
+  },
 }
 
 export default config

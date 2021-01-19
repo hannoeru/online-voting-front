@@ -1,8 +1,8 @@
 <template>
-  <div class="fixed top-0 left-0 inline-flex flex-col p-6 space-y-3 text-left pt-22">
-    <button class="px-3 py-1.5 text-white rounded-lg bg-orange focus:outline-none focus:ring-1">
+  <div class="fixed top-0 left-0 z-40 inline-flex flex-col p-6 space-y-3 text-left pt-22">
+    <router-link to="/vote/new" class="px-3 py-1.5 text-white rounded-lg bg-orange focus:outline-none focus:ring-1 hover:bg-opacity-75">
       投票を作成する
-    </button>
+    </router-link>
     <div class="px-3 py-2 text-gray-400 bg-white rounded-lg">
       <p class="px-1 mb-2 text-xl font-semibold text-blue-900">
         カテゴリー
